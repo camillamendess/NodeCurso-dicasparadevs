@@ -1,17 +1,30 @@
 <html lang="en">
   <%- include('./partials/head.ejs') %>
+  <!-- Inclui o conteúdo do arquivo "head.ejs" localizado na pasta "partials". O "<%- include %>" é uma diretiva do EJS para incluir outros arquivos. -->
+
   <body>
     <%- include('./partials/navbar.ejs') %>
+    <!-- Inclui o conteúdo do arquivo "navbar.ejs" localizado na pasta "partials". -->
+
     <div class="content">
-      <% if (users.length > 0) { %> <% users.forEach(user => { %>
+      <% if (users.length > 0) { %> <!-- Verifica se há usuários no array "users". -->
+      <% users.forEach(user => { %> <!-- Para cada usuário no array "users", executa o seguinte código. -->
 
       <h3 class="title"><%= user.firstName %> <%= user.lastName %></h3>
+      <!-- Exibe o nome completo do usuário concatenando o primeiro e o último nome. -->
 
       <p><%= user.email %></p>
+      <!-- Exibe o e-mail do usuário. -->
 
-      <% }) %> <% } else { %>
+      <% }) %> <!-- Finaliza o loop "forEach" dos usuários. -->
+
+      <% } else { %> <!-- Se não houver usuários no array "users", executa o seguinte código. -->
       <p>Não há usuários para exibir...</p>
-      <% } %>
+      <!-- Exibe uma mensagem indicando que não há usuários para exibir. -->
+
+      <% } %> <!-- Finaliza a estrutura condicional. -->
     </div>
   </body>
 </html>
+
+<!-- O EJS (Embedded JavaScript) é uma linguagem de modelagem que permite a geração dinâmica de páginas HTML no lado do servidor. Ele permite que você insira código JavaScript dentro de suas páginas HTML.  -->
